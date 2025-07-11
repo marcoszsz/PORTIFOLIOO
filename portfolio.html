@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marcos | Portfólio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root { --brand:#208baa; }
+    body  { font-family:"Noto Sans",sans-serif; }
+    html  { scroll-behavior:smooth; }
+
+    .fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease-out,transform .6s ease-out;}
+    .fade-up.show{opacity:1;transform:none;}
+
+    @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+    .float{animation:float 3s ease-in-out infinite;}
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+  <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur border-b shadow-sm z-40">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <a href="#" class="text-lg font-bold text-[var(--brand)]">marcos.dev</a>
+      <nav class="hidden sm:flex gap-6 text-sm">
+        <a href="#sobre"    class="hover:text-[var(--brand)]">Sobre</a>
+        <a href="#projetos" class="hover:text-[var(--brand)]">Projetos</a>
+        <a href="#contato"  class="hover:text-[var(--brand)]">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="pt-28 pb-16 text-center fade-up">
+    <img src="avatar.png" alt="Avatar" class="h-32 w-32 mx-auto rounded-full shadow mb-4" />
+    <h1 class="text-3xl font-extrabold mb-2">Olá, eu sou o Marcos 👋</h1>
+    <p class="max-w-lg mx-auto text-slate-600">
+      Desenvolvedor <span class="font-semibold">Full-Stack</span> que ama transformar ideias em soluções web rápidas,
+      acessíveis e bonitas. Scrola aí. 😎
+    </p>
+
+    <a href="#projetos"
+       class="float mt-8 inline-block px-8 py-3 rounded-full bg-[var(--brand)] text-white font-semibold shadow hover:opacity-90 transition">
+       Veja meus projetos
+    </a>
+  </section>
+
+  <section id="sobre" class="bg-white py-16 fade-up">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-[var(--brand)] mb-6">Sobre mim</h2>
+
+      <p class="leading-relaxed text-slate-700">
+        Profissional de TI com foco em aplicações <strong>JavaScript/TypeScript</strong>,
+        frameworks modernos (React, Next.js) e design limpo com Tailwind.
+        Entusiasta de automação, bancos SQL/NoSQL e boas práticas de código.
+      </p>
+
+      <ul class="mt-6 grid sm:grid-cols-2 gap-4 text-sm">
+        <li>🟦 React / Next.js</li>
+        <li>⚡️ TypeScript</li>
+        <li>🎨 Tailwind & UI/UX</li>
+        <li>⚙️ CI/CD básico (GitHub Actions)</li>
+      </ul>
+
+      <div class="mt-8 flex gap-10 text-center">
+        <div>
+          <p class="text-3xl font-bold text-[var(--brand)]">5+</p>
+          <span class="text-xs">anos codando</span>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-[var(--brand)]">20+</p>
+          <span class="text-xs">projetos entregues</span>
+        </div>
+      </div>
+
+      <ol class="relative border-l border-slate-200 mt-10 space-y-6">
+        <li>
+          <span class="absolute -left-3 w-3 h-3 bg-[var(--brand)] rounded-full"></span>
+          <time class="text-xs text-slate-500">2024 – hoje</time>
+          <p class="ml-4 font-medium">Profissional de TI — Secretaria da Saúde</p>
+        </li>
+        <li>
+          <span class="absolute -left-3 w-3 h-3 bg-[var(--brand)] rounded-full"></span>
+          <time class="text-xs text-slate-500">2021 – 2023</time>
+          <p class="ml-4 font-medium">Estudante — SENAI/SENAC</p>
+        </li>
+      </ol>
+
+      <a href="cv-marcos.pdf"
+         class="mt-10 inline-block px-6 py-3 bg-[var(--brand)] text-white rounded-full shadow hover:opacity-90 transition">
+        Baixar CV →
+      </a>
+
+      <p class="mt-6 text-sm italic">
+        Fora do código:
+        <span class="not-italic">🎮 Valorant, 🎌 animes e ☕️ cafés especiais</span>.
+      </p>
+
+      <div class="flex flex-wrap gap-4 mt-6">
+        <img src="https://miro.medium.com/v2/resize:fit:512/1*JEHLmWo6_SrpHPiP4AimIw.png" alt="Tailwind"   class="h-11" />
+        <img src="https://images.seeklogo.com/logo-png/44/2/next-js-logo-png_seeklogo-449824.png" alt="Next.js" class="h-8"  />
+        <img src="https://images.seeklogo.com/logo-png/29/2/typescript-logo-png_seeklogo-298573.png" alt="TypeScript" class="h-8" />
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos" class="py-16 fade-up">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-[var(--brand)] mb-10">Projetos em Destaque</h2>
+
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div onclick="openProject('cieges')"
+             class="bg-white rounded-xl shadow hover:shadow-2xl hover:-translate-y-1 transition border-t-4 border-[var(--brand)] cursor-pointer">
+          <img src="cieges.jpg" alt="Portal CIEGES" class="w-full h-40 rounded-t-xl object-cover" />
+          <div class="p-5">
+            <h3 class="font-semibold mb-2">Portal CIEGES</h3>
+            <p class="text-sm mb-4">
+              Dashboard web responsivo para estratégia e gestão em saúde, integrado ao SAS Viya.
+            </p>
+            <span class="text-sm font-bold text-[var(--brand)]">Detalhes →</span>
+          </div>
+        </div>
+
+        <div onclick="openProject('infos')"
+             class="bg-white rounded-xl shadow hover:shadow-2xl hover:-translate-y-1 transition border-t-4 border-[var(--brand)] cursor-pointer">
+          <img src="info.png" alt="Painel Info-Saúde" class="w-full h-40 rounded-t-xl object-cover" />
+          <div class="p-5">
+            <h3 class="font-semibold mb-2">Painel Info-Saúde</h3>
+            <p class="text-sm mb-4">
+              Dashboard Tailwind + Viya SAS para dados da saúde pública.
+            </p>
+            <span class="text-sm font-bold text-[var(--brand)]">Detalhes →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="bg-white py-16 fade-up">
+    <div class="max-w-md mx-auto px-4 text-center">
+      <h2 class="text-2xl font-bold text-[var(--brand)] mb-4">Fale Comigo</h2>
+      <p class="mb-6 text-slate-700">
+        Curtiu o que viu? Bora conversar sobre projetos ou uma partida de Valorant.
+      </p>
+      <a href="mailto:marcos@email.com"
+         class="inline-block px-8 py-3 rounded-full bg-[var(--brand)] text-white font-semibold hover:opacity-90 transition">
+        meu email
+      </a>
+
+      <div class="flex justify-center gap-6 mt-8">
+        <a href="https://github.com/marcoszsz" target="_blank" aria-label="GitHub" class="hover:text-[var(--brand)]">
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24"><path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.7-1.4-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1 .1 1.6-.8 1.6-.8.9-1.6 2.4-1.1 3-.8 0-.6.3-1.1.7-1.4-2.7-.3-5.5-1.4-5.5-6.1 0-1.4.5-2.6 1.3-3.5-.1-.3-.6-1.7.1-3.4 0 0 1-.3 3.5 1.3a12 12 0 016.4 0C17.9 6 19 6.3 19 6.3c.7 1.7.3 3 .1 3.4.8.9 1.3 2.1 1.3 3.5 0 4.7-2.8 5.8-5.5 6.1.5.4.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0012 .5z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/marcus-m-b344a6240/" target="_blank" aria-label="LinkedIn" class="hover:text-[var(--brand)]">
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24"><path d="M4.98 3a2 2 0 11.02 4 2 2 0 01-.02-4zM4 8h2v12H4zm5 0h2v1.7c.3-.6 1.2-1.7 2.9-1.7 3.1 0 3.6 2 3.6 4.7V20h-2v-6.3c0-1.5-.1-3.3-2-3.3-2 0-2.3 1.6-2.3 3.2V20H9z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-6 text-center text-xs text-slate-500">
+    © <span id="year"></span> Marcos. Todos os direitos reservados.
+  </footer>
+
+  <div id="projectModal"
+       class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden flex items-center justify-center z-50">
+    <div class="bg-white w-full max-w-lg rounded-xl shadow-xl relative">
+      <button id="pmClose"
+              class="absolute top-3 right-3 text-slate-500 hover:text-red-500 text-2xl font-bold">
+        &times;
+      </button>
+
+      <img id="pmImg" src="" alt="" class="w-full h-56 object-cover rounded-t-xl" />
+      <div class="p-6">
+        <h3 id="pmTitle" class="text-xl font-bold mb-2"></h3>
+        <p id="pmDesc" class="text-sm text-slate-700 mb-4"></p>
+
+        <h4 class="font-semibold mb-1">Stack:</h4>
+        <ul id="pmStack" class="list-disc list-inside text-sm text-slate-600 mb-4"></ul>
+
+    
+        <a id="pmSite"
+           href="#"
+           target="_blank"
+           class="inline-block px-5 py-2 rounded-full bg-[var(--brand)] text-white text-sm font-semibold hover:opacity-90">
+          Ver site →
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+    }, {threshold:0.15});
+    document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+
+    const projectData = {
+      cieges:{
+        title:"Portal CIEGES",
+        img:"cieges.jpg",
+        desc:"Dashboard web responsivo para estratégia e gestão em saúde, integrado ao SAS Viya.",
+        stack:["HTML + Tailwind","JavaScript","SAS Viya"],
+        site:"https://cieges-es.vercel.app/cieges.html"
+      },
+      infos:{
+        title:"Painel Info-Saúde",
+        img:"info.png",
+        desc:"Dashboard Tailwind + Viya SAS para dados da saúde pública.",
+        stack:["Tailwind","JavaScript","Viya SAS"],
+        site:"https://infosaude.vercel.app/Info-Saude.html"
+      }
+    };
+
+    function openProject(id){
+      const p = projectData[id];
+      if(!p) return;
+
+      pmTitle.textContent = p.title;
+      pmImg.src = p.img;
+      pmImg.alt = p.title;
+      pmDesc.textContent = p.desc;
+
+      pmStack.innerHTML = '';
+      p.stack.forEach(tech=>{
+        const li = document.createElement('li');
+        li.textContent = tech;
+        pmStack.appendChild(li);
+      });
+
+      pmSite.href = p.site || '#';
+
+      projectModal.classList.remove('hidden');
+    }
+
+    pmClose.onclick = ()=>projectModal.classList.add('hidden');
+    projectModal.onclick = e=>{
+      if(e.target.id === 'projectModal') projectModal.classList.add('hidden');
+    };
+  </script>
+</body>
+</html>

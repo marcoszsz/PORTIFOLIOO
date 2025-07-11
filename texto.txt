@@ -1,0 +1,2 @@
+Dica: se quiser hospedar no GitHub Pages, basta colocar tudo na branch main e habilitar Pages.
+
